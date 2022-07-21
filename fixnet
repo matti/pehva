@@ -2,7 +2,7 @@
 set -euo pipefail
 
 ifconfig wlan0 down || true
-macchanger -m MAC_ADDR wlan0 || true
+macchanger -m e8:78:65:15:5b:76 wlan0 || true
 ifconfig wlan0 up || true
 systemctl restart networking || true
 
