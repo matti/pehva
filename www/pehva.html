@@ -22,12 +22,21 @@
 </style>
 
 <script>
-const check = () => {
+var check = () => {
   fetch('/')
     .then(data => {
-      console.log(data)
+      if (data.ok) {
+        document.body.style.backgroundColor = "white"
+      } else {
+        document.body.style.backgroundColor = "red"
+      }
+
+      setInterval(()=>{
+        check()
+      }, 3000)
     });
 }
+check()
 </script>
 
 <h1>pehva</h1>
