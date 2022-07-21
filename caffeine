@@ -13,4 +13,4 @@ if [[ "${1:-}" = "run" ]]; then
 fi
 
 screen -S caffeine -X quit || true
-screen -dmS caffeine run
+screen -dmS caffeine -- caffeine run
