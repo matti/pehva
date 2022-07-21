@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+while true; do
+  if autopi power.sleep_timer clear="*"; then
+    sleep 30
+  else
+    sleep 3
+  fi
+done
