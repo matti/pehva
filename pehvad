@@ -6,7 +6,7 @@ if [[ "${1:-}" = "run" ]]; then
 
   while true; do
     while true; do
-      if ! phevctl --car-model=2016 battery; then
+      if ! phevctl --mac=e8:78:65:15:5b:76 --car-model=2016 battery; then
         break
       fi
 
@@ -21,7 +21,7 @@ if [[ "${1:-}" = "run" ]]; then
     systemctl restart networking || true
 
     while true; do
-      ping -c 1 192.168.8.46 && break
+      ping -w 2 -c 1 192.168.8.46 && break
     done
 
     echo "fixed"
