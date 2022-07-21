@@ -10,7 +10,8 @@ if [[ "${1:-}" = "run" ]]; then
         break
       fi
 
-      if ! timeout 10 phevctl --mac=e8:78:65:15:5b:76 --car-model=2016 battery; then
+      sleep 10
+      if ! timeout 15 phevctl --mac=e8:78:65:15:5b:76 --car-model=2016 --verbose battery; then
         break
       fi
 
