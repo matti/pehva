@@ -4,4 +4,3 @@ set -euo pipefail
 sudo ln -sf "$(pwd)/phevctl" /usr/bin/phevctl
 sudo ln -sf "$(pwd)/exe" /usr/bin/exe
 sudo ln -sf "$(pwd)/caffeine" /usr/bin/caffeine
-sudo ln -sf "$(pwd)/pehvad" /usr/bin/pehvad
