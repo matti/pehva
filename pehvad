@@ -19,10 +19,15 @@ if [[ "${1:-}" = "run" ]]; then
       sleep 30
     done
 
-    ifconfig wlan0 down || true
-    macchanger -m E8:78:65:15:5B:76 wlan0 || true
-    ifconfig wlan0 up || true
-    systemctl restart networking || true
+
+    while true; do
+      ifconfig wlan0 down || true
+      macchanger -m E8:78:65:15:5B:76 wlan0 || true
+      ifconfig wlan0 up || true
+
+      echo "restarting networking"
+      systemctl restart networking && break
+    done
 
     while true; do
       ping -w 2 -c 1 192.168.8.46 && break
