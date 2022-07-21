@@ -6,7 +6,11 @@ if [[ "${1:-}" = "run" ]]; then
 
   while true; do
     while true; do
-      if ! phevctl --mac=e8:78:65:15:5b:76 --car-model=2016 battery; then
+      if ! ping -w 2 -c 1 192.168.8.46; then
+        break
+      fi
+
+      if ! timeout 10 phevctl --mac=e8:78:65:15:5b:76 --car-model=2016 battery; then
         break
       fi
 
