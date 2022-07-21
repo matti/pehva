@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+if [[ "${1:-}" = "run" ]]; then
+
+  while true; do
+    while true; do
+      if ! phevctl --car-model=2016 battery; then
+        break
+      fi
+
+      echo ""
+      echo "pehva ok"
+      sleep 30
+    done
+
+    ifconfig wlan0 down || true
+    macchanger -m E8:78:65:15:5B:76 wlan0 || true
+    ifconfig wlan0 up || true
+    systemctl restart networking || true
+
+    while true; do
+      ping -c 1 192.168.8.46 && break
+    done
+
+    echo "fixed"
+  done
+fi
+
+screen -S pehvad -X quit || true
+screen -dmS pehvad -- sudo pehvad run
