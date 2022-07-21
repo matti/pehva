@@ -123,11 +123,11 @@ check()
     value="sudo /home/pi/pehva/fixnet">sudo fixnet</button>
 
   <hr>
-  <button type="submit" name="cmd"
+  <button type="submit" name="cmd" onclick="return confirm('sleep?');"
     value="autopi power.sleep delay=1 modem_off=False acc_off=True confirm=True">sleep</button>
 
   <hr>
-  <button type="submit" name="cmd" onclick="return confirm('sure?');"
+  <button type="submit" name="cmd" onclick="return confirm('hibernate?');"
     value="autopi power.hibernate delay=1 confirm=True">hibernate</button>
   <button type="submit" name="cmd"
     value="autopi power.reboot">reboot</button>
