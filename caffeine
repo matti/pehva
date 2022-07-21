@@ -15,9 +15,11 @@ case "${1:-}" in
   "on")
     $0 off
     screen -dmS caffeine -- caffeine run
+    echo "caffeine on"
   ;;
   "off")
     screen -S caffeine -X quit || true
+    echo "caffeine off"
   ;;
   *)
     echo "wat"
