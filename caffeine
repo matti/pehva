@@ -2,10 +2,15 @@
 
 set -euo pipefail
 
-while true; do
-  if autopi power.sleep_timer clear="*"; then
-    sleep 30
-  else
-    sleep 3
-  fi
-done
+if [[ "${1:-}" = "run" ]]; then
+  while true; do
+    if autopi power.sleep_timer clear="*"; then
+      sleep 30
+    else
+      sleep 3
+    fi
+  done
+fi
+
+screen -S caffeine -X quit || true
+screen -dmS caffeine run
