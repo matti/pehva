@@ -23,8 +23,14 @@
 
 <script>
 var check = () => {
-  fetch('/')
+  const controller = new AbortController()
+
+  const timeoutId = setTimeout(() => controller.abort(), 2000)
+
+  fetch('/', { signal: controller.signal})
     .then(data => {
+      clearTimeout(timeoutId)
+
       if (data.ok) {
         document.body.style.backgroundColor = "white"
       } else {
