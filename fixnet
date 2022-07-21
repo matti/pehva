@@ -6,4 +6,20 @@ macchanger -m e8:78:65:15:5b:76 wlan0 || true
 ifconfig wlan0 up || true
 systemctl restart networking || true
 
+COUNTER=0
+while true; do
+  if >/dev/null 2>&1 ping -c 1 -w 2 192.168.8.46; then
+    echo "pong"
+    break
+  else
+    echo "ping timeout"
+  fi
+
+  COUNTER=$((COUNTER + 1))
+  if [[ "$COUNTER" -ge "15" ]]; then
+    echo "NOT OK"
+    exit
+  fi
+done
+
 echo "OK"
