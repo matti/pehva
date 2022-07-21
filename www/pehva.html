@@ -1,0 +1,89 @@
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+  }
+  hr {
+    border-bottom: 4px solid black;
+    padding: 8px;
+  }
+  button {
+    display: block;
+    width: 100%;
+    background-color: #caccaa;
+    padding: 32px;
+    margin: 0px;
+    margin-top: 16px;
+    font-size: 32px;
+    cursor: pointer;
+    text-align: center;
+  }
+</style>
+<h1>pehva</h1>
+<form action="/" method="post">
+  <hr>
+  <button type="submit" name="cmd"
+    value="autopi power.status">power status</button>
+  <hr>
+
+  <button type="submit" name="cmd"
+    value="./phevctl --car-model=2016 battery">battery</button>
+  <button type="submit" name="cmd"
+    value="./phevctl --car-model=2016 lockstatus">lockstatus</button>
+  <button type="submit" name="cmd"
+    value="./phevctl --car-model=2016 chargestatus">chargestatus</button>
+  <button type="submit" name="cmd"
+    value="./phevctl --car-model=2016 remaningchargestatus">remaningchargestatus</button>
+
+  <hr>
+  <button type="submit" name="cmd"
+    value="./phevctl --car-model=2016 headlights on">headlights on</button>
+  <button type="submit" name="cmd"
+    value="./phevctl --car-model=2016 headlights off">headlights off</button>
+
+  <hr>
+  <button type="submit" name="cmd"
+    value="./phevctl --car-model=2016 parkinglights on">parkinglights on</button>
+  <button type="submit" name="cmd"
+    value="./phevctl --car-model=2016 parkinglights off">parkinglights off</button>
+
+  <hr>
+  <button type="submit" name="cmd"
+    value="./phevctl --car-model=2016 hvac">hvac</button>
+  <hr>
+  <button type="submit" name="cmd"
+    value="./phevctl --car-model=2016 acmode heat 10 && ./phevctl --car-model=2016 aircon on">heat 10</button>
+  <button type="submit" name="cmd"
+    value="./phevctl --car-model=2016 acmode heat 20 && ./phevctl --car-model=2016 aircon on">heat 20</button>
+  <button type="submit" name="cmd"
+    value="./phevctl --car-model=2016 acmode heat 30 && ./phevctl --car-model=2016 aircon on">heat 30</button>
+
+  <button type="submit" name="cmd"
+    value="./phevctl --car-model=2016 acmode cool 10 && ./phevctl --car-model=2016 aircon on">cool 10</button>
+  <button type="submit" name="cmd"
+    value="./phevctl --car-model=2016 acmode cool 20 && ./phevctl --car-model=2016 aircon on">cool 20</button>
+  <button type="submit" name="cmd"
+    value="./phevctl --car-model=2016 acmode cool 30 && ./phevctl --car-model=2016 aircon on">cool 30</button>
+
+  <button type="submit" name="cmd"
+    value="./phevctl --car-model=2016 acmode windscreen 10 && ./phevctl --car-model=2016 aircon on">windscreen 10</button>
+  <button type="submit" name="cmd"
+    value="./phevctl --car-model=2016 acmode windscreen 20 && ./phevctl --car-model=2016 aircon on">windscreen 20</button>
+  <button type="submit" name="cmd"
+    value="./phevctl --car-model=2016 acmode windscreen 30 && ./phevctl --car-model=2016 aircon on">windscreen 30</button>
+
+  <hr>
+  <button type="submit" name="cmd"
+    value="./phevctl --car-model=2016 aircon off">aircon off</button>
+
+  <hr>
+  <button type="submit" name="cmd"
+    value="ping -c 1 192.168.8.46">ping mitsu</button>
+
+  <hr>
+  <button type="submit" name="cmd"
+    value="autopi power.hibernate confirm=True">hibernate</button>
+  <button type="submit" name="cmd"
+    value="autopi power.reboot">reboot</button>
+</form>
